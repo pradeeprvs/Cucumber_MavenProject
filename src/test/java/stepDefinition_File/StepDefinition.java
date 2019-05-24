@@ -11,10 +11,11 @@ public class StepDefinition {
 	   System.out.println("User is on the landing Page");
 	}
 
-	@When("user enters the valid login id and password")
-	public void user_enters_the_valid_login_id_and_password() {
-	   System.out.println("user successfully enter user id and password");
-	}
+	  @When("^user enters the valid \"([^\"]*)\" and \"([^\"]*)\"$")
+	    public void user_enters_the_valid_something_and_something(String strArg1, String strArg2) throws Throwable {
+	       System.out.println(strArg1);
+	       System.out.println(strArg2);
+	    }
 
 	@Then("user should be able to see his account details")
 	public void user_should_be_able_to_see_his_account_details() {
